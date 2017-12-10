@@ -15,11 +15,11 @@ public class MusicEntity {
     private String musicalbum;
     private String musicurl;
 
-    public MusicEntity(){}
-
-    public MusicEntity(String musicname){
-        this.musicname = musicname;
-    }
+//    public MusicEntity(){}
+//
+//    public MusicEntity(String musicname){
+//        this.musicname = musicname;
+//    }
 
     public int getMusicid() {
         return musicid;

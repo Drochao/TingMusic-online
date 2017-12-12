@@ -26,8 +26,8 @@ import java.util.List;
 
 public class DownloadActivity extends PlayBarBaseActivity {
     private Toolbar toolbar;
-    public static final String rulgetmusic = "http://192.168.1.103:8080/getMusic/";
-    public static final String rul = "http://192.168.1.101:8080/musicsystem/";
+    public static final String rulgetmusic = "http://192.168.1.114:8080/getMusic/";
+    public static final String rul = "http://192.168.1.109:8080/musicsystem/";
     public static final String dr = Environment.getDataDirectory().getPath() ;
     private ListView listView;
     private Handler myHandler;

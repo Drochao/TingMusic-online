@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dntz.tingmusic.R;
+import com.dntz.tingmusic.activity.DownloadActivity;
 import com.dntz.tingmusic.entity.MusicEntity;
 
 import java.util.ArrayList;
@@ -83,7 +84,7 @@ public class OnlineMusicAdapter extends BaseAdapter {
                 String name = getItem(position).getMusicname();
                 Toast.makeText(context,name+"正在下载", Toast.LENGTH_LONG).show();
                 DownloadManager downloadManager = (DownloadManager) context.getSystemService(DOWNLOAD_SERVICE);
-                Uri uri = Uri.parse(url);
+                Uri uri = Uri.parse(DownloadActivity.rul + url);
                 DownloadManager.Request request = new DownloadManager.Request(uri);
                 //设置允许使用的网络类型，这里是移动网络和wifi都可以
                 request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_MOBILE | DownloadManager.Request.NETWORK_WIFI);
@@ -104,10 +105,10 @@ public class OnlineMusicAdapter extends BaseAdapter {
         private TextView musicNameV;
         private ImageView downloadIv;
     }
-    private MusicEntity geturl(String url) {
-        MusicEntity musicEntity = new MusicEntity();
-        musicEntity.setMusicurl(url);
-        return musicEntity;
-    }
+//    private MusicEntity geturl(String url) {
+//        MusicEntity musicEntity = new MusicEntity();
+//        musicEntity.setMusicurl(url);
+//        return musicEntity;
+//    }
 
 }

@@ -1,22 +1,17 @@
 package com.dntz.tingmusic.activity;
 
-import android.app.DownloadManager;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.dntz.tingmusic.R;
-import com.dntz.tingmusic.adapter.OnlineMusicAdapater;
+import com.dntz.tingmusic.adapter.OnlineMusicAdapter;
 import com.dntz.tingmusic.entity.MusicEntity;
 import com.dntz.tingmusic.util.OkHttp;
 import com.google.gson.Gson;
@@ -29,7 +24,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class DownloadActivity extends PlayBarBaseActivity {
     private Toolbar toolbar;
     public static final String rulgetmusic = "http://192.168.1.103:8080/getMusic/";
     public static final String rul = "http://192.168.1.101:8080/musicsystem/";
@@ -41,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
             "\"musickeywards\":\"1\"," +
             "\"musicimage\":\"upload/image/a5efbe1881384b30b7324879ecaf470f.jpg\"," +
             "\"musicalbum\":\"1\"," +
-            "\"musicurl\":\"upload/image/e7bda4ab8f494f3d948a2ec700865855.mp3\"}," +
+            "\"musicurl\":\"http://win.web.ri01.sycdn.kuwo.cn/resource/n3/48/31/4052450782.mp3\"}," +
             "{\"musicid\":52,\"musicmd5\":\"\",\"musicname\":\"浮夸\"," +
             "\"musicauthor\":\"陈奕迅\",\"musiclyric\":\"2\",\"musickeywards\":\"2\"," +
             "\"musicimage\":\"upload/image/f4056dc02547463f99bf7cb95efbf73e.png\"," +
@@ -51,12 +46,7 @@ public class MainActivity extends AppCompatActivity {
             "\"musicauthor\":\"1\",\"musiclyric\":\"\",\"musickeywards\":\"\"," +
             "\"musicimage\":\"\",\"musicalbum\":\"\"," +
             "\"musicurl\":\"upload/image/0bfb3c3243174db39254eefded2445f8.mp3\"}]";
-    String[] urlMusicc= new String[]{"http://192.168.1.101:8080/musicsystem/upload/image/0bfb3c3243174db39254eefded2445f8.mp3",
-            "http://win.web.ri01.sycdn.kuwo.cn/resource/n3/48/31/4052450782.mp3",
-            "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2012178017,770654329&fm=27&gp=0.jpg"};
-    String urlMusic = "http://192.168.1.101:8080/musicsystem/upload/image/0bfb3c3243174db39254eefded2445f8.mp3";
-    String url = "http://127.0.0.1:8080/getMusic";
-    private OnlineMusicAdapater onlineMusicAdapater = null;
+    private OnlineMusicAdapter onlineMusicAdapater = null;
     private List<MusicEntity> dataList = null;
 
 
@@ -64,8 +54,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_download);
+        //startService(new Intent(this, PlayerService.class));
         dataList = new ArrayList<MusicEntity>();
-        onlineMusicAdapater = new OnlineMusicAdapater((ArrayList<MusicEntity>) dataList, MainActivity.this);
+        onlineMusicAdapater = new OnlineMusicAdapter((ArrayList<MusicEntity>) dataList, DownloadActivity.this);
         listView = (ListView) findViewById(R.id.online_music_list);
         listView.setAdapter(onlineMusicAdapater);
 
@@ -87,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
                         String json = (String) msg.getData().get("json");
                         ArrayList<MusicEntity> dataList;
                         dataList = fromJsonList(json, MusicEntity.class);
-                        OnlineMusicAdapater onlineMusicAdapater = new OnlineMusicAdapater(dataList, MainActivity.this);
+                        OnlineMusicAdapter onlineMusicAdapater = new OnlineMusicAdapter(dataList, DownloadActivity.this);
                         listView.setAdapter(onlineMusicAdapater);
                         break;
                     default:

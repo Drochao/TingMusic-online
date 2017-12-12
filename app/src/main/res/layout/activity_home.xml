@@ -38,11 +38,6 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="49.5dp"
-                        android:orientation="horizontal">
-
                         <TextView
                             android:layout_marginLeft="20dp"
                             android:id="@+id/home_local_music_tv"
@@ -52,14 +47,12 @@
                             android:gravity="center_vertical"
                             android:text="本地音乐" />
 
-                    </RelativeLayout>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="0.5dp"
-                        android:background="@color/colorDividerGray"></View>
                 </LinearLayout>
             </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/colorDividerGray"></View>
 
 
             <LinearLayout
@@ -76,10 +69,6 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="49.5dp"
-                        android:orientation="horizontal">
 
                         <TextView
                             android:layout_marginLeft="20dp"
@@ -89,16 +78,12 @@
                             android:gravity="center_vertical"
                             android:text="最近音乐" />
 
-
-                    </RelativeLayout>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="0.5dp"
-                        android:background="@color/colorDividerGray"></View>
                 </LinearLayout>
             </LinearLayout>
-
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/colorDividerGray"></View>
             <LinearLayout
                 android:id="@+id/home_my_love_music_ll"
                 android:layout_width="match_parent"
@@ -112,10 +97,6 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="49.5dp"
-                        android:orientation="horizontal">
 
                         <TextView
                             android:layout_marginLeft="20dp"
@@ -125,9 +106,13 @@
                             android:gravity="center_vertical"
                             android:text="我的喜爱" />
 
-                    </RelativeLayout>
                 </LinearLayout>
             </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/colorDividerGray"></View>
             <LinearLayout
                 android:id="@+id/online_music_love_music_ll"
                 android:layout_width="match_parent"
@@ -141,11 +126,6 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="49.5dp"
-                        android:orientation="horizontal">
-
                         <TextView
                             android:layout_marginLeft="20dp"
                             android:id="@+id/home_download_music_tv"
@@ -154,8 +134,6 @@
                             android:gravity="center_vertical"
                             android:text="在线下载" />
 
-
-                    </RelativeLayout>
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
@@ -227,12 +205,6 @@
 
         </LinearLayout>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/home_my_list_ll"
-            android:background="?attr/appbg" />
-
     </RelativeLayout>
 
     <android.support.design.widget.NavigationView
@@ -242,5 +214,6 @@
         android:layout_gravity="start"
         app:headerLayout="@layout/nav_header"
         app:menu="@menu/nav_menu" />
+
 
 </android.support.v4.widget.DrawerLayout>

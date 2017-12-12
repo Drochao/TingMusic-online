@@ -145,7 +145,7 @@ public class HomeActivity extends PlayBarBaseActivity {
         OnlineMusicLl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this,MainActivity.class);
+                Intent intent = new Intent(HomeActivity.this,DownloadActivity.class);
                 intent.putExtra(Constant.LABEL,Constant.LABEL_MYLOVE);
                 startActivity(intent);
             }

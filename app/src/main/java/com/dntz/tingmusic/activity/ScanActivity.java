@@ -166,7 +166,7 @@ public class ScanActivity extends BaseActivity {
 
                             musicInfo.setName(name);
                             musicInfo.setSinger(singer);
-                            musicInfo.setAlbum(album);
+                            //musicInfo.setAlbum(album);
                             musicInfo.setPath(path);
                             Log.e(TAG, "run: parentPath = "+parentPath );
                             musicInfo.setParentPath(parentPath);

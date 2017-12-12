@@ -22,7 +22,7 @@ public class MusicInfo implements Comparable, Parcelable {
     private int id;
     private String name;
     private String singer;
-    private String album;
+    //private String album;
     private String duration;
     private String path;
     private String parentPath; //父目录路径
@@ -30,13 +30,13 @@ public class MusicInfo implements Comparable, Parcelable {
     private String firstLetter;
 
 
-    public String getAlbum() {
-        return album;
-    }
-
-    public void setAlbum(String album) {
-        this.album = album;
-    }
+//    public String getAlbum() {
+//        return album;
+//    }
+//
+//    public void setAlbum(String album) {
+//        this.album = album;
+//    }
 
     public int getId() {
         return id;
@@ -118,7 +118,7 @@ public class MusicInfo implements Comparable, Parcelable {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", singer='" + singer + '\'' +
-                ", album='" + album + '\'' +
+               // ", album='" + album + '\'' +
                 ", duration='" + duration + '\'' +
                 ", path='" + path + '\'' +
                 ", parentPath='" + parentPath + '\'' +
@@ -137,7 +137,7 @@ public class MusicInfo implements Comparable, Parcelable {
         dest.writeInt(this.id);
         dest.writeString(this.name);
         dest.writeString(this.singer);
-        dest.writeString(this.album);
+        //dest.writeString(this.album);
         dest.writeString(this.duration);
         dest.writeString(this.path);
         dest.writeString(this.parentPath);
@@ -152,7 +152,7 @@ public class MusicInfo implements Comparable, Parcelable {
         this.id = in.readInt();
         this.name = in.readString();
         this.singer = in.readString();
-        this.album = in.readString();
+        //this.album = in.readString();
         this.duration = in.readString();
         this.path = in.readString();
         this.parentPath = in.readString();

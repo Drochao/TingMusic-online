@@ -124,60 +124,8 @@ public class SingleFragment extends Fragment {
             }
         });
 
-//        playModeRl = (RelativeLayout)view.findViewById(R.id.local_music_playmode_rl);
-//        playModeIv = (ImageView)view.findViewById(R.id.local_music_playmode_iv);
-//        playModeTv = (TextView)view.findViewById(R.id.local_music_playmode_tv);
-
-//        initDefaultPlayModeView();
-//
-//        //  顺序 --> 随机-- > 单曲
-//        playModeRl.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                int playMode = MyMusicUtil.getIntShared(Constant.KEY_MODE);
-//                switch (playMode){
-//                    case Constant.PLAYMODE_SEQUENCE:
-//                        playModeTv.setText(Constant.PLAYMODE_RANDOM_TEXT);
-//                        MyMusicUtil.setShared(Constant.KEY_MODE,Constant.PLAYMODE_RANDOM);
-//                        break;
-//                    case Constant.PLAYMODE_RANDOM:
-//                        playModeTv.setText(Constant.PLAYMODE_SINGLE_REPEAT_TEXT);
-//                        MyMusicUtil.setShared(Constant.KEY_MODE,Constant.PLAYMODE_SINGLE_REPEAT);
-//                        break;
-//                    case Constant.PLAYMODE_SINGLE_REPEAT:
-//                        playModeTv.setText(Constant.PLAYMODE_SEQUENCE_TEXT);
-//                        MyMusicUtil.setShared(Constant.KEY_MODE,Constant.PLAYMODE_SEQUENCE);
-//                        break;
-//                }
-//                initPlayMode();
-//            }
-//        });
         return view;
     }
-
-//    private void initDefaultPlayModeView(){
-//        int playMode = MyMusicUtil.getIntShared(Constant.KEY_MODE);
-//        switch (playMode){
-//            case Constant.PLAYMODE_SEQUENCE:
-//                playModeTv.setText(Constant.PLAYMODE_SEQUENCE_TEXT);
-//                break;
-//            case Constant.PLAYMODE_RANDOM:
-//                playModeTv.setText(Constant.PLAYMODE_RANDOM_TEXT);
-//                break;
-//            case Constant.PLAYMODE_SINGLE_REPEAT:
-//                playModeTv.setText(Constant.PLAYMODE_SINGLE_REPEAT_TEXT);
-//                break;
-//        }
-//        initPlayMode();
-    //}
-
-//    private void initPlayMode() {
-//        int playMode = MyMusicUtil.getIntShared(Constant.KEY_MODE);
-//        if (playMode == -1) {
-//            playMode = 0;
-//        }
-//        playModeIv.setImageLevel(playMode);
-//    }
 
     public void updateView(){
         musicInfoList = dbManager.getAllMusicFromMusicTable();
@@ -258,7 +206,6 @@ public class SingleFragment extends Fragment {
                         context.sendBroadcast(intent);
                         MyMusicUtil.setShared(Constant.KEY_ID,dbManager.getFirstId(Constant.LIST_ALLMUSIC));
                     }
-                }else {
                 }
                 dialog.dismiss();
 

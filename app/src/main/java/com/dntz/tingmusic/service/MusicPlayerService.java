@@ -11,7 +11,7 @@ import com.dntz.tingmusic.receiver.PlayerManagerReceiver;
 public class MusicPlayerService extends Service {
     private static final String TAG = MusicPlayerService.class.getName();
     //接受各类型Intent标识符
-    public static final String PLAYER_MANAGER_ACTION = "com.lijunyan.blackmusic.service.MusicPlayerService.player.action";
+    public static final String PLAYER_MANAGER_ACTION = "com.dntz.tingmusic.service.MusicPlayerService.player.action";
 
     private PlayerManagerReceiver mReceiver;
 

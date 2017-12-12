@@ -12,12 +12,8 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.dntz.tingmusic.R;
-//import com.lijunyan.blackmusic.activity.ThemeActivity;
 import com.dntz.tingmusic.database.DBManager;
-//import com.lijunyan.blackmusic.entity.AlbumInfo;
-//import com.lijunyan.blackmusic.entity.FolderInfo;
 import com.dntz.tingmusic.entity.MusicInfo;
-//import com.lijunyan.blackmusic.entity.SingerInfo;
 import com.dntz.tingmusic.service.MusicPlayerService;
 
 import java.io.File;
